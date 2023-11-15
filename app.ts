@@ -1,6 +1,7 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import 'express-async-errors';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 // ROUTERS
 import productsRouter from './routes/products.js';
 // Middlewares

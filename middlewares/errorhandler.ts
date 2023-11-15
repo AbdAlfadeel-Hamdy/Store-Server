@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { AppError } from '../utils/appError.js';
+import AppError from '../utils/appError.js';
 
 const errorHandler = (
   error: unknown,

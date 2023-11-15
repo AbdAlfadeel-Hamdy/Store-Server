@@ -1,7 +1,33 @@
 import { Schema, model } from 'mongoose';
 
 const schema = new Schema({
-  price: Number,
+  name: {
+    type: String,
+    required: [true, 'Product name must be provided'],
+  },
+  price: {
+    type: Number,
+    required: [true, 'Product price must be provided'],
+  },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
+  rating: {
+    type: Number,
+    default: 4.5,
+  },
+  company: {
+    type: String,
+    enum: {
+      values: ['ikea', 'liddy', 'caressa', 'marcos'],
+      message: '{VALUE} is not supported',
+    },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 export default model('Product', schema);
